@@ -74,7 +74,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.example.laboratory.LaboratoryApplication</mainClass>
+					<mainClass>laboratorio.lab.LaboratoryApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
