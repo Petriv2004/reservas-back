@@ -1,6 +1,6 @@
-package laboratorio.lab.controllers;
+package main.java.laboratorio.lab.controllers;
 
-import laboratorio.lab.services.CarrerasService;
+import main.java.laboratorio.lab.services.CarrerasService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

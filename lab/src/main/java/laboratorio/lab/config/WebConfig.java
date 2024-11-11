@@ -1,4 +1,4 @@
-package laboratorio.lab.config;
+package main.java.laboratorio.lab.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

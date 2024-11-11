@@ -1,10 +1,10 @@
-package laboratorio.lab.services;
+package main.java.laboratorio.lab.services;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
-import laboratorio.lab.exceptions.ExceptionReserva;
-import laboratorio.lab.models.*;
-import laboratorio.lab.repositories.*;
+import main.java.laboratorio.lab.exceptions.ExceptionReserva;
+import main.java.laboratorio.lab.models.*;
+import main.java.laboratorio.lab.repositories.*;
 import org.springframework.stereotype.Service;
 
 import java.sql.Time;

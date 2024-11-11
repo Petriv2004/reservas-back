@@ -1,7 +1,7 @@
-package laboratorio.lab.controllers;
+package main.java.laboratorio.lab.controllers;
 
-import laboratorio.lab.models.Inventarios;
-import laboratorio.lab.services.InventarioService;
+import main.java.laboratorio.lab.models.Inventarios;
+import main.java.laboratorio.lab.services.InventarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

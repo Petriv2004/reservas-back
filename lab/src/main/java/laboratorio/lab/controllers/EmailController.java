@@ -1,7 +1,7 @@
-package laboratorio.lab.controllers;
+package main.java.laboratorio.lab.controllers;
 
-import laboratorio.lab.models.EmailRequest;
-import laboratorio.lab.services.EmailService;
+import main.java.laboratorio.lab.models.EmailRequest;
+import main.java.laboratorio.lab.services.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.MailException;

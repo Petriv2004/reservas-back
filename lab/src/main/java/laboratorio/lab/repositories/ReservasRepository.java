@@ -1,7 +1,7 @@
-package laboratorio.lab.repositories;
+package main.java.laboratorio.lab.repositories;
 
 import jakarta.transaction.Transactional;
-import laboratorio.lab.models.Reservas;
+import main.java.laboratorio.lab.models.Reservas;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

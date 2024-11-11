@@ -1,11 +1,11 @@
-package laboratorio.lab.controllers;
+package main.java.laboratorio.lab.controllers;
 
-import laboratorio.lab.models.Estudiantes;
-import laboratorio.lab.models.Inventarios;
-import laboratorio.lab.models.Laboratorista;
-import laboratorio.lab.services.AutenticationLaboratoristaService;
-import laboratorio.lab.services.AutenticationService;
-import laboratorio.lab.services.JefeLabService;
+import main.java.laboratorio.lab.models.Estudiantes;
+import main.java.laboratorio.lab.models.Inventarios;
+import main.java.laboratorio.lab.models.Laboratorista;
+import main.java.laboratorio.lab.services.AutenticationLaboratoristaService;
+import main.java.laboratorio.lab.services.AutenticationService;
+import main.java.laboratorio.lab.services.JefeLabService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

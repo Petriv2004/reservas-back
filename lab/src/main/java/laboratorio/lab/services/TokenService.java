@@ -1,7 +1,7 @@
-package laboratorio.lab.services;
+package main.java.laboratorio.lab.services;
 
-import laboratorio.lab.models.VerificarToken;
-import laboratorio.lab.repositories.TokenRepository;
+import main.java.laboratorio.lab.models.VerificarToken;
+import main.java.laboratorio.lab.repositories.TokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

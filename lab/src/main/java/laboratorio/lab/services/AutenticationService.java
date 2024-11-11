@@ -1,7 +1,7 @@
-package laboratorio.lab.services;
+package main.java.laboratorio.lab.services;
 
-import laboratorio.lab.models.Estudiantes;
-import laboratorio.lab.repositories.EstudiantesRepository;
+import main.java.laboratorio.lab.models.Estudiantes;
+import main.java.laboratorio.lab.repositories.EstudiantesRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

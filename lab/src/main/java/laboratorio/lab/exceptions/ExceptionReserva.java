@@ -1,4 +1,4 @@
-package laboratorio.lab.exceptions;
+package main.java.laboratorio.lab.exceptions;
 
 public class ExceptionReserva extends Exception{
     // Constructor que recibe un mensaje

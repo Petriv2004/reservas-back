@@ -1,4 +1,4 @@
-package laboratorio.lab.models;
+package main.java.laboratorio.lab.models;
 
 public class EmailRequest {
 

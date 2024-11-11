@@ -1,9 +1,9 @@
-package laboratorio.lab.services;
+package main.java.laboratorio.lab.services;
 
-import laboratorio.lab.models.Inventarios;
-import laboratorio.lab.repositories.HorariosInvRedesRepository;
-import laboratorio.lab.repositories.InventariosRepository;
-import laboratorio.lab.repositories.LaboratoristaRepository;
+import main.java.laboratorio.lab.models.Inventarios;
+import main.java.laboratorio.lab.repositories.HorariosInvRedesRepository;
+import main.java.laboratorio.lab.repositories.InventariosRepository;
+import main.java.laboratorio.lab.repositories.LaboratoristaRepository;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;

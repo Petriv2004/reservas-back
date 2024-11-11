@@ -1,7 +1,7 @@
-package laboratorio.lab.services;
+package main.java.laboratorio.lab.services;
 
-import laboratorio.lab.models.Laboratorista;
-import laboratorio.lab.repositories.LaboratoristaRepository;
+import main.java.laboratorio.lab.models.Laboratorista;
+import main.java.laboratorio.lab.repositories.LaboratoristaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;

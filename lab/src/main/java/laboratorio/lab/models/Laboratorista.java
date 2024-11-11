@@ -1,4 +1,4 @@
-package laboratorio.lab.models;
+package main.java.laboratorio.lab.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

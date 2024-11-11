@@ -1,9 +1,9 @@
-package laboratorio.lab.controllers;
+package main.java.laboratorio.lab.controllers;
 
-import laboratorio.lab.models.Estudiantes;
-import laboratorio.lab.models.VerificarToken;
-import laboratorio.lab.services.EmailService;
-import laboratorio.lab.services.TokenService;
+import main.java.laboratorio.lab.models.Estudiantes;
+import main.java.laboratorio.lab.models.VerificarToken;
+import main.java.laboratorio.lab.services.EmailService;
+import main.java.laboratorio.lab.services.TokenService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

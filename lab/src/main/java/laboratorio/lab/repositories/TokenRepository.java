@@ -1,7 +1,7 @@
-package laboratorio.lab.repositories;
+package main.java.laboratorio.lab.repositories;
 
 import jakarta.transaction.Transactional;
-import laboratorio.lab.models.VerificarToken;
+import main.java.laboratorio.lab.models.VerificarToken;
 import org.springframework.data.domain.Example;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

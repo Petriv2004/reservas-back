@@ -1,12 +1,12 @@
-package laboratorio.lab.services;
+package main.java.laboratorio.lab.services;
 
-import laboratorio.lab.dtos.EstudiantesDto;
-import laboratorio.lab.mappers.EstudiantesMapper;
-import laboratorio.lab.models.Estudiantes;
-import laboratorio.lab.models.Reservas;
-import laboratorio.lab.repositories.CarrerasRepository;
-import laboratorio.lab.repositories.EstudiantesRepository;
-import laboratorio.lab.repositories.ReservasRepository;
+import main.java.laboratorio.lab.dtos.EstudiantesDto;
+import main.java.laboratorio.lab.mappers.EstudiantesMapper;
+import main.java.laboratorio.lab.models.Estudiantes;
+import main.java.laboratorio.lab.models.Reservas;
+import main.java.laboratorio.lab.repositories.CarrerasRepository;
+import main.java.laboratorio.lab.repositories.EstudiantesRepository;
+import main.java.laboratorio.lab.repositories.ReservasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;

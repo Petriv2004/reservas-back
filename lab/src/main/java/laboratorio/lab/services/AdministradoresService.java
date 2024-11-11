@@ -1,11 +1,11 @@
-package laboratorio.lab.services;
+package main.java.laboratorio.lab.services;
 
-import laboratorio.lab.models.Estudiantes;
-import laboratorio.lab.models.Laboratorista;
-import laboratorio.lab.models.Reservas;
-import laboratorio.lab.repositories.EstudiantesRepository;
-import laboratorio.lab.repositories.LaboratoristaRepository;
-import laboratorio.lab.repositories.ReservasRepository;
+import main.java.laboratorio.lab.models.Estudiantes;
+import main.java.laboratorio.lab.models.Laboratorista;
+import main.java.laboratorio.lab.models.Reservas;
+import main.java.laboratorio.lab.repositories.EstudiantesRepository;
+import main.java.laboratorio.lab.repositories.LaboratoristaRepository;
+import main.java.laboratorio.lab.repositories.ReservasRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

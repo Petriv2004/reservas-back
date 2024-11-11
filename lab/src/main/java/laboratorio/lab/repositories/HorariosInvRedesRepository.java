@@ -1,7 +1,7 @@
-package laboratorio.lab.repositories;
+package main.java.laboratorio.lab.repositories;
 
-import laboratorio.lab.models.AreaEstudios;
-import laboratorio.lab.models.HorariosInvRedes;
+import main.java.laboratorio.lab.models.AreaEstudios;
+import main.java.laboratorio.lab.models.HorariosInvRedes;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

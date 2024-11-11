@@ -1,7 +1,7 @@
-package laboratorio.lab.services;
+package main.java.laboratorio.lab.services;
 
-import laboratorio.lab.models.Inventarios;
-import laboratorio.lab.repositories.InventariosRepository;
+import main.java.laboratorio.lab.models.Inventarios;
+import main.java.laboratorio.lab.repositories.InventariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

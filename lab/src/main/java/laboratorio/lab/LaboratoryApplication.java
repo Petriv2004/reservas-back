@@ -1,4 +1,4 @@
-package laboratorio.lab;
+package main.java.laboratorio.lab;
 
 
 import org.springframework.boot.SpringApplication;

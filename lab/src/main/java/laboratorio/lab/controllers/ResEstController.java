@@ -1,14 +1,14 @@
-package laboratorio.lab.controllers;
+package main.java.laboratorio.lab.controllers;
 
-import laboratorio.lab.dtos.EstudiantesDto;
-import laboratorio.lab.exceptions.ExceptionReserva;
-import laboratorio.lab.models.Equipos;
-import laboratorio.lab.models.Estudiantes;
-import laboratorio.lab.models.Reservas;
-import laboratorio.lab.services.AutenticationService;
-import laboratorio.lab.services.EmailService;
-import laboratorio.lab.services.EstudiantesService;
-import laboratorio.lab.services.ReservasService;
+import main.java.laboratorio.lab.dtos.EstudiantesDto;
+import main.java.laboratorio.lab.exceptions.ExceptionReserva;
+import main.java.laboratorio.lab.models.Equipos;
+import main.java.laboratorio.lab.models.Estudiantes;
+import main.java.laboratorio.lab.models.Reservas;
+import main.java.laboratorio.lab.services.AutenticationService;
+import main.java.laboratorio.lab.services.EmailService;
+import main.java.laboratorio.lab.services.EstudiantesService;
+import main.java.laboratorio.lab.services.ReservasService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

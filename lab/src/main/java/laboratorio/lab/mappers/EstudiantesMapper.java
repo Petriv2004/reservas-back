@@ -1,7 +1,7 @@
-package laboratorio.lab.mappers;
+package main.java.laboratorio.lab.mappers;
 
-import laboratorio.lab.dtos.EstudiantesDto;
-import laboratorio.lab.models.Estudiantes;
+import main.java.laboratorio.lab.dtos.EstudiantesDto;
+import main.java.laboratorio.lab.models.Estudiantes;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,4 +1,4 @@
-package laboratorio.lab.models;
+package main.java.laboratorio.lab.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
