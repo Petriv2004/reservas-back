@@ -1,33 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DBNavigator.Project.DDLFileAttachmentManager">
-    <mappings />
-    <preferences />
-  </component>
-  <component name="DBNavigator.Project.DataEditorManager">
-    <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="false" />
-    <value-preview-pinned value="false" />
-  </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
-    <show-object-properties value="false" />
+    <show-object-properties value="true" />
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="ede9afd2-93ed-4e92-bd4c-a82dd6aac46b">
+    <connection id="dcc8e432-a816-4f6c-aaa9-1c22a296c747">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
-  <component name="DBNavigator.Project.DatabaseEditorStateManager">
-    <last-used-providers />
-  </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
-  </component>
-  <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="ede9afd2-93ed-4e92-bd4c-a82dd6aac46b" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
@@ -35,13 +20,13 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="ede9afd2-93ed-4e92-bd4c-a82dd6aac46b" active="true" signed="true">
+      <connection id="dcc8e432-a816-4f6c-aaa9-1c22a296c747" active="true" signed="true">
         <database>
           <name value="Connection" />
           <description value="" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />
-          <database-version value="17.0" />
+          <database-version value="16.4" />
           <driver-source value="BUNDLED" />
           <driver-library value="" />
           <driver value="" />
@@ -53,7 +38,7 @@
           <tns-profile value="" />
           <type value="USER_PASSWORD" />
           <user value="postgres" />
-          <deprecated-pwd value="" />
+          <deprecated-pwd value="TmFjaW9uYWxjYW1wZW9uMDQu" />
         </database>
         <properties>
           <auto-commit value="false" />
