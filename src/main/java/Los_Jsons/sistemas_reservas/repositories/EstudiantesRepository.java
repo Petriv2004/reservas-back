@@ -38,4 +38,10 @@ public interface EstudiantesRepository extends JpaRepository<Estudiantes,Integer
 
     @Query("SELECT e FROM Estudiantes e WHERE e.id_codigo = :idCodigo")
     Estudiantes findByIdCodigo(@Param("idCodigo") Integer idCodigo);
+
+    @Query("SELECT e FROM Estudiantes e WHERE e.cedula = :cedula")
+    Estudiantes findByIdCedula(@Param("cedula") Integer cedula);
+
+    @Query("SELECT e FROM Estudiantes e WHERE e.correo = :correo")
+    Estudiantes findByCorreo(@Param("correo") String correo);
 }

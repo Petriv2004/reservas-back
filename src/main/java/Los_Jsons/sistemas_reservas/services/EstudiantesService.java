@@ -113,4 +113,29 @@ public class EstudiantesService {
     public List<EstudiantesDto> saveEstudiantes(@RequestBody List<Estudiantes> estudiantesList) {
         return estudiantesRepository.saveAll(estudiantesList).stream().map(estudiantesMapper::EstudiantesToDto).collect(Collectors.toList());
     }
+
+    public boolean encontrarCorreo(String correo){
+        Estudiantes estudiante = estudiantesRepository.findByCorreo(correo);
+        return estudiante != null;
+    }
+
+    public boolean encontrarCedula(Integer cedula){
+        Estudiantes estudiante = estudiantesRepository.findByIdCedula(cedula);
+        return estudiante != null;
+    }
+
+    public boolean encontrarCodigo(Integer codigo){
+        Estudiantes estudiante = estudiantesRepository.findByIdCodigo(codigo);
+        return estudiante != null;
+    }
+
+    public boolean actualizarContrasena(String correo, String contrasena) {
+        Estudiantes estudiante= estudiantesRepository.findByCorreo(correo);
+        if (estudiante != null) {
+            estudiante.setContrasena(contrasena);
+            estudiantesRepository.save(estudiante);
+            return true;
+        }
+        return false;
+    }
 }
