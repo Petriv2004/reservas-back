@@ -15,4 +15,7 @@ public interface LaboratoristaRepository extends JpaRepository<Laboratorista,Int
 
     @Query("SELECT r FROM Reservas r WHERE r.fecha = :fecha")
     List<Reservas> reservasPorFecha(@Param("fecha") Date fecha);
+
+    @Query("SELECT e FROM Laboratorista e WHERE e.correo = :correo")
+    Laboratorista findCorreo(@Param("correo") String correo);
 }

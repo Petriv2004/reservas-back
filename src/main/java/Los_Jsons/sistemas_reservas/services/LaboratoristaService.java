@@ -1,6 +1,7 @@
 package Los_Jsons.sistemas_reservas.services;
 
 import Los_Jsons.sistemas_reservas.models.Estudiantes;
+import Los_Jsons.sistemas_reservas.models.Laboratorista;
 import Los_Jsons.sistemas_reservas.models.Reservas;
 import Los_Jsons.sistemas_reservas.repositories.EstudiantesRepository;
 import Los_Jsons.sistemas_reservas.repositories.LaboratoristaRepository;
@@ -49,5 +50,15 @@ public class LaboratoristaService {
 
     public long contarReservas() {
         return reservasRepository.count();
+    }
+
+    public boolean actualizarContrasena(String correo, String contrasena) {
+        Laboratorista laboratorista = laboratoristaRepository.findCorreo(correo);
+        if (laboratorista != null) {
+            laboratorista.setContrasena(contrasena);
+            laboratoristaRepository.save(laboratorista);
+            return true;
+        }
+        return false;
     }
 }

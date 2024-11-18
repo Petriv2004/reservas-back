@@ -29,7 +29,7 @@ public class AutenticarTokenController {
             emailService.sendSimpleEmail(estudiante.getCorreo(), "Verificación Por Token", "Su token es: \n" + token);
             return ResponseEntity.ok("Token de verificación enviado al correo");
         }
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.badRequest().body("Token de verificación no fue enviado al correo, hay datos que están en uso");
     }
 
     @PostMapping("/verify-token")
@@ -40,4 +40,5 @@ public class AutenticarTokenController {
         }
         return ResponseEntity.ok("Token válido, puede proceder con el registro");
     }
+
 }

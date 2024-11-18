@@ -20,8 +20,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: laboratoristaupc@gmail.com
-    password:  ezim tduj kezy gzld
+    username: gestionreservasupc@gmail.com
+    password: uuvu wfnj wqgj hjsp
     properties:
       mail.smtp.auth: true
       mail.smtp.starttls.enable: true

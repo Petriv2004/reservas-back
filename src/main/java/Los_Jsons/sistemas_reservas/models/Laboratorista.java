@@ -30,4 +30,10 @@ public class Laboratorista {
     public String getCorreo() {return correo;}
 
     public String getContrasena() {return contrasena;}
+
+    public void setId_codigo(Integer id_codigo) {this.id_codigo = id_codigo;}
+
+    public void setCorreo(String correo) {this.correo = correo;}
+
+    public void setContrasena(String contrasena) {this.contrasena = contrasena;}
 }

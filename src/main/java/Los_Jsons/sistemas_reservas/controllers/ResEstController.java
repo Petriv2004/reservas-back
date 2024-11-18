@@ -32,38 +32,6 @@ public class ResEstController {
         this.tokenService = tokenService;
     }
 
-    @PostMapping("/saveEst")
-    private Estudiantes saveEstudiante(@RequestBody Estudiantes estudiante){
-        return estudiantesService.saveEstudiante(estudiante);
-    }
-
-    @PostMapping("/saveS")
-    private List<EstudiantesDto> saveEstudiantes(@RequestBody List<Estudiantes> estudiantesList){
-        return estudiantesService.saveEstudiantes(estudiantesList);
-    }
-
-    @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody Estudiantes estudiante) {
-
-        boolean esAutenticado = autenticacionService.autenticar(estudiante.getId_codigo(), estudiante.getContrasena());
-        if (esAutenticado) {
-            return ResponseEntity.ok().build();
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-        }
-    }
-
-    @PostMapping("/loginNoEst")
-    public ResponseEntity<String> loginNoEst(@RequestBody Estudiantes estudiante) {
-
-        boolean esAutenticado = autenticacionService.autenticar(estudiante.getCedula(), estudiante.getContrasena());
-        if (esAutenticado) {
-            return ResponseEntity.ok().build();
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-        }
-    }
-
     @GetMapping("/reservas")
     public List<Reservas> verReservas(){
         return reservasService.verReservas();
@@ -96,7 +64,7 @@ public class ResEstController {
                 }
             }
             String detallesE = detalles;
-            String emoji = "\uD83D\uDE42"; // 🙂
+            String emoji = "\uD83D\uDE42"; // 馃檪
 
             detallesE += "\n" + "Por favor no olvidar traer la bata de laboratorio y el carnet. Muchas gracias por usar nuestro sistema. " + emoji;
             emailService.sendSimpleEmail(correo,"Nueva Reserva Agendada, ID " + nuevaReserva.getId(),detallesE);
@@ -104,13 +72,13 @@ public class ResEstController {
             if (!nuevaReserva.getEstudiantesList().isEmpty()){
                 detalles += "Estudiantes: \n";
                 for (Estudiantes e : nuevaReserva.getEstudiantesList()){
-                    detalles += "Nombre: " + e.getNombre() + ", Código: " + e.getId_codigo() + "\n";
+                    detalles += "Nombre: " + e.getNombre() + ", C贸digo: " + e.getId_codigo() + "\n";
                 }
             }
             emailService.sendSimpleEmail("laboratoristaupc@gmail.com","Nueva Reserva Agendada.",detalles);
             return ResponseEntity.ok(nuevaReserva);
         }else if(reservasService.isResR()){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("YA AGENDÓ UNA RESERVA PARA ESTE DIA,SELECCIONE OTRA FECHA");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("YA AGEND脫 UNA RESERVA PARA ESTE DIA,SELECCIONE OTRA FECHA");
         }
         else if (reservasService.isBool()) {
             reservasService.setBool(false);
@@ -125,9 +93,9 @@ public class ResEstController {
         List<Estudiantes> estudiantesReserva = reservasService.obtenerEstudiantesPorReserva(id);
         String correo = estudiantesReserva.get(0).getCorreo();
         reservasService.borrarReserva(id);
-        emailService.sendSimpleEmail(correo, "Cancelación exitosa","Su reserva con id " + id + " ha sido cancelada con éxito.");
-        emailService.sendSimpleEmail("laboratoristaupc@gmail.com", "Estudiante ha cancelado la reserva con id " + id,"El estudiante con código " + estudiantesReserva.get(0).getId_codigo() + " ha cancelado su reserva con id " + id);
-        return ResponseEntity.ok("La cancelación ha sido exitosa.");
+        emailService.sendSimpleEmail(correo, "Cancelaci贸n exitosa","Su reserva con id " + id + " ha sido cancelada con 茅xito.");
+        emailService.sendSimpleEmail("laboratoristaupc@gmail.com", "Estudiante ha cancelado la reserva con id " + id,"El estudiante con c贸digo " + estudiantesReserva.get(0).getId_codigo() + " ha cancelado su reserva con id " + id);
+        return ResponseEntity.ok("La cancelaci贸n ha sido exitosa.");
     }
 
     @GetMapping("/envio-confirmacion/{id}")
@@ -135,17 +103,17 @@ public class ResEstController {
         List<Estudiantes> estudiantesReserva = reservasService.obtenerEstudiantesPorReserva(id);
         String correo = estudiantesReserva.get(0).getCorreo();
         String token = tokenService.generarToken(correo);
-        emailService.sendSimpleEmail(correo, "Verificación de Cancelación Por Token","Su token es: \n" + token);
-        return ResponseEntity.ok("Token de verificación enviado al correo");
+        emailService.sendSimpleEmail(correo, "Verificaci贸n de Cancelaci贸n Por Token","Su token es: \n" + token);
+        return ResponseEntity.ok("Token de verificaci贸n enviado al correo");
     }
 
     @PostMapping("/Verificar-cancelacion")
     public ResponseEntity<String> verifyToken(@RequestBody VerificarToken token) {
         boolean isValid = tokenService.verificarToken(token.getToken());
         if (!isValid) {
-            return ResponseEntity.badRequest().body("Token inválido o expirado");
+            return ResponseEntity.badRequest().body("Token inv谩lido o expirado");
         }
-        return ResponseEntity.ok("Token válido, puede proceder con la cancelación de la reserva");
+        return ResponseEntity.ok("Token v谩lido, puede proceder con la cancelaci贸n de la reserva");
     }
 
     @GetMapping("/verificar")

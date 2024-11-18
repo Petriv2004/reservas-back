@@ -1,10 +1,7 @@
 package Los_Jsons.sistemas_reservas.controllers;
 
 import Los_Jsons.sistemas_reservas.models.Estudiantes;
-import Los_Jsons.sistemas_reservas.services.AutenticationService;
-import Los_Jsons.sistemas_reservas.services.EmailService;
-import Los_Jsons.sistemas_reservas.services.EstudiantesService;
-import Los_Jsons.sistemas_reservas.services.TokenService;
+import Los_Jsons.sistemas_reservas.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,16 +14,24 @@ public class EstudiantesController {
     private AutenticationService autenticacionService;
     private EmailService emailService;
     private TokenService tokenService;
+    private LaboratoristaService laboratoristaService;
 
-    public EstudiantesController(EstudiantesService estudiantesService, AutenticationService autenticacionService, EmailService emailService, TokenService tokenService) {
+    public EstudiantesController(EstudiantesService estudiantesService, AutenticationService autenticacionService, EmailService emailService, TokenService tokenService, LaboratoristaService laboratoristaService) {
         this.estudiantesService = estudiantesService;
         this.autenticacionService = autenticacionService;
         this.emailService = emailService;
         this.tokenService = tokenService;
+        this.laboratoristaService = laboratoristaService;
     }
 
     @GetMapping("/correo-existente/{correo}")
     public ResponseEntity<String> encontrarcorreo(@PathVariable String correo){
+        if(correo.equals("laboratoristaupc@gmail.com") || correo.equals("jefelaboratistasupc@gmail.com") ||
+                correo.equals("gerentelaboratistasupc@gmail.com") || correo.equals("adreservasupc@gmail.com")){
+            String token = tokenService.generarToken(correo);
+            emailService.sendSimpleEmail(correo, "Cambio de contraseña por Token","Su token es: \n" + token);
+            return ResponseEntity.ok().build();
+        }
         if(estudiantesService.encontrarCorreo(correo)){
             String token = tokenService.generarToken(correo);
             emailService.sendSimpleEmail(correo, "Cambio de contraseña por Token","Su token es: \n" + token);
@@ -47,11 +52,21 @@ public class EstudiantesController {
 
     @PutMapping("/cambio-contrasena/{correo}/{contrasena}")
     public ResponseEntity<String> actualizarCodigoCarnet(@PathVariable String correo, @PathVariable String contrasena) {
-        boolean actualizado = estudiantesService.actualizarContrasena(correo, contrasena);
-        if (actualizado) {
-            return ResponseEntity.ok("Contraseña actualizada exitosamente.");
-        } else {
-            return ResponseEntity.notFound().build();
+        if(correo.equals("laboratoristaupc@gmail.com") || correo.equals("jefelaboratistasupc@gmail.com") ||
+                correo.equals("gerentelaboratistasupc@gmail.com") || correo.equals("adreservasupc@gmail.com")){
+            boolean actualizado = laboratoristaService.actualizarContrasena(correo, contrasena);
+            if (actualizado) {
+                return ResponseEntity.ok("Contraseña actualizada exitosamente.");
+            } else {
+                return ResponseEntity.badRequest().build();
+            }
+        }else{
+            boolean actualizado = estudiantesService.actualizarContrasena(correo, contrasena);
+            if (actualizado) {
+                return ResponseEntity.ok("Contraseña actualizada exitosamente.");
+            } else {
+                return ResponseEntity.badRequest().build();
+            }
         }
     }
 
