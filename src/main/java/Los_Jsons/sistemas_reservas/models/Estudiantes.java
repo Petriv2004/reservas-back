@@ -22,7 +22,7 @@ public class Estudiantes {
     @Column(name = "NOMBRE")
     private String nombre;
 
-    @Column(name = "CEDULA")
+    @Column(name = "CEDULA", unique = true)
     private int cedula;
 
     @Column(name = "VISITAS")
