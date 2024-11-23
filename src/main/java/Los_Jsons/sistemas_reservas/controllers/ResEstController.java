@@ -94,7 +94,7 @@ public class ResEstController {
         String correo = estudiantesReserva.get(0).getCorreo();
         reservasService.borrarReserva(id);
         emailService.sendSimpleEmail(correo, "Cancelación exitosa","Su reserva con id " + id + " ha sido cancelada con éxito.");
-        emailService.sendSimpleEmail("laboratoristaupc@gmail.com", "Estudiante ha cancelado la reserva con id " + id,"El estudiante con c贸digo " + estudiantesReserva.get(0).getId_codigo() + " ha cancelado su reserva con id " + id);
+        emailService.sendSimpleEmail("laboratoristaupc@gmail.com", "Estudiante ha cancelado la reserva con id " + id,"El estudiante con código " + estudiantesReserva.get(0).getId_codigo() + " ha cancelado su reserva con id " + id);
         return ResponseEntity.ok("La cancelación ha sido exitosa.");
     }
 
